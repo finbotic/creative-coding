@@ -1,0 +1,29 @@
+<html>
+    <title>Info submission:</title>
+    <head>
+        <script>
+        function getData()
+        {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+
+            
+
+            window.alert("Your Name and Phone number: " + name + ", " + phone);
+        }
+        </script>
+        <link rel="stylesheet" type="text/css" href="./styles/mainstyle.css">
+        </head>
+        <h3>What is your contact information?</h3>
+        <br>
+        <form style="background-color: rgb(82, 82, 82)">
+            <input type="text" value = " " id="name">name<br>
+            <input type="text" value=" " id="phone">phone<br>
+          
+            <button id="btnSubmit" class="btn btn-primary" onClick="getData();">Submit My Info</button>
+        </form>
+        <br>
+   
+        <a href="page2.html">Zelda</a><a href="index.html">Home</a>
+    </body>
+</html>

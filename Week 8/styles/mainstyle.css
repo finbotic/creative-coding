@@ -1,0 +1,25 @@
+p{
+    color:white;
+    background-color:black;
+}
+body{
+    background:rgb(26, 26, 26)
+}
+
+#ordered{
+    color:white
+}
+
+#unordered{
+    color:white
+}
+
+#radio{
+    color:red
+}
+#checkboxes{
+    color:blue
+}
+#textbox{
+    color:green
+}
