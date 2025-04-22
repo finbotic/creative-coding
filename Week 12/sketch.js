@@ -41,12 +41,36 @@ function exitdraw() {
   quad(395,150,400,150,400,250,395,250)
 }
 
+function borderdraw() {
+  fill(0)
+  quad(0,398,0,400,400,400,400,398)
+  quad(398,0,400,0,400,400,398,400)
+  quad(2,0,0,400,0,0,2,400)
+  quad(0,0,400,0,400,2,0,2)
+}
+
+function obstacledraw(
+  x,
+  randomOffset,
+  randomMult
+) {
+    fill(random(255), random(255), random(255));
+    ellipse(x, randomOffset+(randomMult*10), 20, 20); 
+}
+
+function wintext() {
+    fill(0,255,0)
+  text('yAAAAAAAAYY you win!!',200,200)
+}
+
+function idiottext() {
+  text('why did you do that. you unwon. you`re STUPID.',100,200)
+}
+
 function draw() {
   if(WIN != 1)
   {
   background(220);
-  
-  fill(random(255), random(255), random(255));
   
   ar = (Ra*mult*frameCount) % height
   br = (Rb*mult*frameCount) % height
@@ -55,14 +79,12 @@ function draw() {
   er = (Re*mult*frameCount) % height
   fr = (Rf*mult*frameCount) % height
   
-  
-  
-  ellipse(75, ar+(Ra*10), 20, 20);
-  ellipse(125, br+(Rb*10), 20, 20);
-  ellipse(175, cr+(Rc*10), 20, 20);
-  ellipse(225, dr+(Rd*10), 20, 20);
-  ellipse(275, er+(Re*10), 20, 20);
-  ellipse(325, fr+(Rf*10), 20, 20);
+  obstacledraw(75,ar,Ra)
+  obstacledraw(125,br,Rb)
+  obstacledraw(175,cr,Rc)
+  obstacledraw(225,dr,Rd)
+  obstacledraw(275,er,Re)
+  obstacledraw(325,fr,Rf)
   
   if(MOUSEPRESS == 1){
   ellipse(mouseX,mouseY,30,30)
@@ -70,17 +92,18 @@ function draw() {
   
   playerdraw(x,y)
   exitdraw()
+  borderdraw()
     
   if(WON==1){
     fill(255,0,0)
-    text('why did you do that. you unwon. you`re STUPID.',100,200)
+    idiottext()
   }
+    
   }
   else
     if(WIN==1){
   background(0,137,0)
-  fill(0,255,0)
-  text('yAAAAAAAAYY you win!!',200,200)
+  wintext()
   WON=1
     }
   }
