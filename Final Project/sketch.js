@@ -328,6 +328,13 @@ for(a = 0; a < OBJcount; a++){
   }
 }
   for(i = 0; i < OBJcount; i++){
+  for(c=0; c<OBJcount; c++){
+	if(c != i){
+  drawArrow(POS[i][0],createVector(-(POS[i][0].x-POS[c][0].x)/2,-(POS[i][0].y-POS[c][0].y)/2), POS[c][12],colovr)
+    }
+  }
+}
+  for(i = 0; i < OBJcount; i++){
   if(MOUSEPRESS == 1 && !(mouseX > POS[i][2] && mouseX < POS[i][3] && mouseY > POS[i][4] && mouseY < POS[i][5]) || MOUSEPRESS == 0){
     Rx = 0
     Ry = 0
@@ -345,7 +352,6 @@ for(a = 0; a < OBJcount; a++){
     for(c=0; c<OBJcount; c++){
 	if(c != i){
     
-    drawArrow(POS[i][0],createVector(-(POS[i][0].x-POS[c][0].x)/2,-(POS[i][0].y-POS[c][0].y)/2), POS[c][12],colovr)
 	resultant1.x = resultant1.x + (POS[i][0].x-POS[c][0].x)
     resultant1.y = resultant1.y + (POS[i][0].y-POS[c][0].y)
     resultant1.setMag((POS[c][12]*GEE)/(DIS[i][c]^2))
@@ -403,12 +409,11 @@ if(BOUNDS == 0){
     objectdraw(POS[i][0].x,POS[i][0].y,POS[i][12])
     
     POS[i][10] = 0
-
+  
   }
   
 }
-  
-  
+
   mouseXvelocity = mouseX - pmouseX
   mouseYvelocity = mouseY - pmouseY
 }
