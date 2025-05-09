@@ -1,0 +1,19 @@
+controls document
+1 through 0 add objects with masses in multiples of ten at your mouse position (1 = 10, 2 = 20, ... , 0 = 100)
+
+UP_ARROW increases the strength of gravity
+DOWN_ARROW decreases the strength of gravity
+
+LEFT_ARROW and RIGHT_ARROW cycle the color of the arrows
+
+R randomizes each object's position
+T randomizes each object's velocity
+
+B turns on 'bounds', which makes it so if an object hits a border, it just teleports to the other side. wouldn't reccomend, objects build up a ridiculous velocity with this one.
+
+grab objects by hovering over them with your mouse, and holding LMB to hold them. This cancels their velocity. You can fling the projectile yourself if you let go while still moving your mouse, i like to make little orbiting systems.
+
+MAIN quirk currently:
+when two objects collide, for some weird reason, they really like to just multiply each other's velocity in a random direction and accelerate at an extremely runaway pace. dunno why it happens, use R and T to fix it, if you feel like fixing it. I could fix this by introducing collision, but, n o .
+
+debug is activated with D, if you're really curious. its still very wonky.
